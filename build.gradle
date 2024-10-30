@@ -65,13 +65,19 @@ repositories {
     maven { url = 'https://maven.theillusivec4.top' } // Curios
 }
 
+mixin {
+    add sourceSets.main, "loooxbotania.refmap.json"
+
+    debug.verbose = true
+    debug.export = true
+}
+
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
     // Botania
-    compileOnly fg.deobf("vazkii.botania:Botania:1.20.1-446-FORGE:api")
-    runtimeOnly fg.deobf("vazkii.botania:Botania:1.20.1-446-FORGE")
+    implementation fg.deobf("vazkii.botania:Botania:1.20.1-446-FORGE")
 
     // Curios
     compileOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}:api")

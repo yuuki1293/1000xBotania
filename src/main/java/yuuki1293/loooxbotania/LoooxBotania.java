@@ -14,7 +14,6 @@ public class LoooxBotania
     public static final String MODID = "loooxbotania";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
-    public static final int NEW_MAX_MANA = 1000000000;
 
     public LoooxBotania()
     {

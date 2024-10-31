@@ -15,8 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import vazkii.botania.common.block.block_entity.mana.ManaPoolBlockEntity;
 import vazkii.botania.common.block.mana.ManaPoolBlock;
 import net.minecraft.world.level.block.entity.BlockEntity;
-
-import static yuuki1293.loooxbotania.LoooxBotania.NEW_MAX_MANA;
+import yuuki1293.loooxbotania.Config;
 
 @Mixin(ManaPoolBlockEntity.class)
 public abstract class ManaPoolBlockEntityMixin extends BlockEntity {
@@ -36,7 +35,7 @@ public abstract class ManaPoolBlockEntityMixin extends BlockEntity {
     @Redirect(method = "initManaCapAndNetwork", at = @At(value = "FIELD", target = "Lvazkii/botania/common/block/block_entity/mana/ManaPoolBlockEntity;manaCap:I", opcode = Opcodes.PUTFIELD), remap = false)
     private void initManaCapAndNetwork(ManaPoolBlockEntity manaPoolBlockEntity, int x) {
         if (this.getMaxMana() == -1) {
-            this.manaCap = ((ManaPoolBlock) getBlockState().getBlock()).variant == ManaPoolBlock.Variant.DILUTED ? MAX_MANA_DILLUTED : NEW_MAX_MANA;
+            this.manaCap = ((ManaPoolBlock) getBlockState().getBlock()).variant == ManaPoolBlock.Variant.DILUTED ? MAX_MANA_DILLUTED : Config.maxMana;
         }
     }
 
@@ -44,7 +43,7 @@ public abstract class ManaPoolBlockEntityMixin extends BlockEntity {
     private void getCurrentMana(CallbackInfoReturnable<Integer> cir) {
         if (getBlockState().getBlock() instanceof ManaPoolBlock pool) {
             if (pool.variant == ManaPoolBlock.Variant.CREATIVE) {
-                cir.setReturnValue(NEW_MAX_MANA);
+                cir.setReturnValue(Config.maxMana);
             }
         }
     }

@@ -19,7 +19,7 @@ public abstract class ManaPoolMinecartEntityMixin {
         return 1F - (double) this.getMana() / (double) Config.maxMana * 0.1;
     }
 
-    @ModifyArg(method = "moveAlongTrack", at = @At(value = "INVOKE", target = "Ljava/lang/Math;min(II)I"), index = 0, remap = false)
+    @ModifyArg(method = "moveAlongTrack", at = @At(value = "INVOKE", target = "Ljava/lang/Math;min(II)I"), index = 0)
     private int moveAlongTrack(int x, @Local(name = "cartMana") int cartMana) {
         return Config.maxMana - cartMana;
     }

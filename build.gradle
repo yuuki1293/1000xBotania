@@ -90,6 +90,12 @@ dependencies {
 
     // JEI
     runtimeOnly(fg.deobf("mezz.jei:jei-1.20.1-forge:15.2.0.27"))
+
+    // Mixin Extra
+    compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.4.1"))
+    implementation(jarJar("io.github.llamalad7:mixinextras-forge:0.4.1")) {
+        jarJar.ranged(it, "[0.4.1,)")
+    }
 }
 
 tasks.named('processResources', ProcessResources).configure {

@@ -14,7 +14,7 @@ public abstract class ManaPoolMinecartEntityMixin {
     @Shadow(remap = false)
     public abstract int getMana();
 
-    @ModifyVariable(method = "tick", at = @At("STORE"), ordinal = 0, remap = false)
+    @ModifyVariable(method = "tick", at = @At("STORE"), ordinal = 0)
     private double tick(double d) {
         return 1F - (double) this.getMana() / (double) Config.maxMana * 0.1;
     }

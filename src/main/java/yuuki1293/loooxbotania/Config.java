@@ -13,7 +13,7 @@ public class Config {
 
     private static final ForgeConfigSpec.IntValue MAX_MANA = BUILDER
         .comment("Mana Pool")
-        .defineInRange("maxMana", 1_000_000_000, 1000000, Integer.MAX_VALUE);
+        .defineInRange("maxMana", 1000000000, 1000000, Integer.MAX_VALUE);
 
     static final ForgeConfigSpec SPEC = BUILDER.build();
 

@@ -8,10 +8,5 @@
   "refmap": "loooxbotania.mixin-refmap.json",
   "minVersion": "0.8",
   "mixins": [
-    "ManaComponentMixin",
-    "ManaMirrorItemManaItemImplMixin",
-    "ManaPoolBlockEntityMixin",
-    "ManaPoolBlockEntityRendererMixin",
-    "ManaPoolMinecartEntityMixin"
   ]
 }

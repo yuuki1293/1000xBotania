@@ -91,7 +91,7 @@ dependencies {
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 
     // Botania
-    implementation fg.deobf("vazkii.botania:Botania:1.20.1-446-FORGE")
+    implementation fg.deobf("vazkii.botania:Botania:${botania_version}")
 
     // Curios
     runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_version}")
@@ -100,7 +100,7 @@ dependencies {
     runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:${patchouli_version}")
 
     // JEI
-    runtimeOnly(fg.deobf("mezz.jei:jei-1.20.1-forge:15.2.0.27"))
+    runtimeOnly(fg.deobf("mezz.jei:jei-1.18.2:${jei_version}"))
 
     // Mixin Extra
     compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.4.1"))

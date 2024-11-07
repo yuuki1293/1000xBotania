@@ -9,7 +9,7 @@ import yuuki1293.loooxbotania.Config;
 
 @Mixin(ItemManaMirror.ManaItem.class)
 public class ItemManaMirrorMixin {
-    @Inject(method = "getMaxMana", at = @At(value = "RETURN"), cancellable = true)
+    @Inject(method = "getMaxMana", at = @At(value = "RETURN"), cancellable = true, remap = false)
     private void getMaxMana(CallbackInfoReturnable<Integer> cir){
         cir.setReturnValue(Config.maxMana);
     }

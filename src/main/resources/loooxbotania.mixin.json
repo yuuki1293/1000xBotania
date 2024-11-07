@@ -9,6 +9,7 @@
   "minVersion": "0.8",
   "mixins": [
     "ManaComponentMixin",
+    "ManaInfusionRecipeMixin",
     "ManaMirrorItemManaItemImplMixin",
     "ManaPoolBlockEntityMixin",
     "ManaPoolBlockEntityRendererMixin",

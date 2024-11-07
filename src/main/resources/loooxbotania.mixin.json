@@ -11,6 +11,7 @@
     "ColorHandlerMixin",
     "EntityPoolMinecartMixin",
     "ItemManaMirrorMixin",
+    "RecipeManaInfusionMixin",
     "RenderTilePoolMixin",
     "TilePoolMixin"
   ]

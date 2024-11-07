@@ -14,7 +14,7 @@ import yuuki1293.loooxbotania.Config;
 @Mixin(ColorHandler.class)
 public class ColorHandlerMixin {
     @Contract(pure = true)
-    @ModifyArg(method = "submitItems", at = @At(value = "INVOKE", target = "Lvazkii/botania/client/render/ColorHandler$ItemHandlerConsumer;register(Lnet/minecraft/client/color/item/ItemColor;[Lnet/minecraft/world/level/ItemLike;)V"), index = 0, remap = false)
+    @ModifyArg(method = "submitItems", at = @At(value = "INVOKE", target = "Lvazkii/botania/client/render/ColorHandler$ItemHandlerConsumer;register(Lnet/minecraft/client/color/item/ItemColor;[Lnet/minecraft/world/level/ItemLike;)V", ordinal = 4), index = 0, remap = false)
     private static @NotNull ItemColor register(ItemColor color) {
         return (s, t) -> {
             if (t == 1) {
